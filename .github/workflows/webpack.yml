@@ -8,11 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
+  # This job checks out code from the repo
   checkout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
+  # This job does the core processing
   process:
     runs-on: ubuntu-latest
   
