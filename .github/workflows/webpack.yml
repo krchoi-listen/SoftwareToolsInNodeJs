@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,12 +18,20 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: Run a one-line script
+      run: echo Hello, world!
 
-    - name: Build
+    - name: Run a multi-line script
       run: |
-        npm install
-        npx webpack
+        echo Add other actions to build
+        echo test, and deploy your porject.
+        
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #    node-version: ${{ matrix.node-version }}
+
+    # - name: Build
+    #   run: |
+    #     npm install
+    #     npx webpack
