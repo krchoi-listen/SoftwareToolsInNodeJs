@@ -32,8 +32,6 @@ jobs:
       - name: Install Dependencies
         run: |
           ls -la
-          cd ..
-          ls -la
           npm i
           npm run build
           npm run test
